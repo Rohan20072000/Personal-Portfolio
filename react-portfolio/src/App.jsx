@@ -15,17 +15,15 @@ function App() {
     
     <Router>
 <Navbar />
-<div className='container mt-4'>
+<div className="container mt-5 pt-4">
   <Routes>
-    <Route path= "/"  element={<Home />} />
+    <Route path="/" element={<Home />} />
     <Route path="/projects" element={<Projects />} />
-    <Route path= "/about" element={<About />}/>
-     <Route path= "/resume" element={<Resume />}/>
+    <Route path="/about" element={<About />} />
+    <Route path="/resume" element={<Resume />} />
   </Routes>
-
-
-
 </div>
+
 
 
     </Router>

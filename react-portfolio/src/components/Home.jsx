@@ -1,70 +1,105 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Hi, I'm Rohan";
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayText(prev => prev + fullText.charAt(index));
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 150);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    
-    <div className='d-flex align-items-center justify-content-center min-vh-100 bg-dark text-white'>
+    <div 
+      className='d-flex align-items-center justify-content-center min-vh-100 text-white'
+      style={{
+        background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)", // Modern gradient
+      }}
+    >
       <div className='text-center container px-4'>
 
+        {/* Profile Image */}
         <img  
-        src='/images/rohan.jpg'
-         alt="Rohan"
-         className="rounded-circle mb-3"
-         style={{width: '140px',height:'140px',objectFit:'cover', border:'3px solid #fff'}}
-         />
+          src='/images/Rohan_portfolio.jpg'
+          alt="Rohan"
+          className="rounded-circle mb-3 shadow-lg"
+          style={{
+            width: '150px',
+            height: '150px',
+            objectFit: 'cover',
+            border: '4px solid #17a2b8'
+          }}
+        />
 
-
-          
-         
-        
-  
-         
-         
-         
-
-         <p className='text-uppercase text-info fw-semibold mb-4' style={{ letterSpacing: '2px' }}>
+        {/* Animated Intro Text */}
+        <p 
+          className='text-uppercase fw-semibold mb-4'
+          style={{ letterSpacing: '3px', color: "#17a2b8" }}
+        >
           Welcome to My Portfolio
         </p>
-      <h1 className='display-4 fw-bold'>Hi, I'm Rohan</h1>
-      <p className='lead mb-4 mt-4'>A Web Developer learning and growing every day.
-         I work mainly with React for frontend and Django REST Framework for backend. 
-         I’ve built some good beginner-level projects and I'm focused on improving my skills by practicing real-world problems and coding daily. 
-         I’m serious, consistent, and ready to work hard. 
-        I’m looking for a chance to join a team where I can learn more and contribute with whatever I know. 
-          </p>
+        <h1 
+          className='display-4 fw-bold mb-3'
+          style={{
+            textShadow: "2px 2px 8px rgba(0,0,0,0.6)"
+          }}
+        >
+          {displayText}
+        </h1>
 
-<div className='d-flex justify-content-center gap-3'>
-          <Link to="/projects" className="btn btn-primary me-3">View Projects</Link>
-          <a href="/resume.pdf" className="btn btn-outline-light" target="_blank" rel="noopener noreferrer">Download Resume</a>
+        {/* About Section */}
+        <p className='lead mb-4 mt-3' style={{ maxWidth: "700px", margin: "0 auto", lineHeight: "1.7" }}>
+          I’m a <strong>Web Developer & Aspiring Data Scientist</strong> with hands-on experience in 
+          <strong> React</strong>, <strong>Django</strong>, and <strong>Python</strong>. 
+          <br /><br />
+          My journey started with web development, but I’m deeply interested in 
+          <strong> Data Science & Machine Learning</strong> — applying data-driven solutions to real-world problems.  
+          <br /><br />
+          I believe in consistent practice, clean coding, and continuous learning. 
+        </p>
+
+        {/* Buttons */}
+        <div className='d-flex justify-content-center gap-3'>
+          <Link to="/projects" className="btn btn-info fw-semibold px-4 me-3 shadow-sm">View Projects</Link>
+          <a href="/resume.pdf" className="btn btn-outline-light fw-semibold px-4 shadow-sm" target="_blank" rel="noopener noreferrer">
+            Download Resume
+          </a>
         </div>
 
+        {/* Footer */}
+        <footer className="text-center text-white border-top border-light mt-5 pt-3">
+          <div className="container">
+            <p className="mb-1">
+              📞 <a href="tel:+919108562401" className="text-info text-decoration-none">+91 91085 62401</a> &nbsp; | &nbsp;
+              📧 <a href="mailto:rohangaikwad.ds@gmail.com" className="text-info text-decoration-none">rg212873@gmail.com</a>
+            </p>
+            <p className="mb-0">
+              <a href="https://github.com/Rohan20072000" className="text-info me-3 text-decoration-none" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/rohan-gaikwad-b23a15237/" className="text-info text-decoration-none" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </p>
+          </div>
+        </footer>
 
-        <footer className="bg-dark text-center text-white border-top border-secondary py-3 mt-5">
-        <div className="container">
-          <p className="mb-1">
-            📞 <a href="tel:+919876543210" className="text-info text-decoration-none">+91 91085 62401</a> &nbsp; | &nbsp;
-            📧 <a href="mailto:rohan@example.com" className="text-info text-decoration-none">rg212873@gmail.com</a>
-          </p>
-          <p className="mb-0">
-            <a href="https://github.com/yourusername" className="text-info me-3 text-decoration-none" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" className="text-info text-decoration-none" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </p>
-        </div>
-      </footer>
-
-
-  </div>
-
-
-  </div>
-  
-
-
-
-
-
+      </div>
+    </div>
   )
 }
 
 export default Home
+
+
+
+
+
+
+
