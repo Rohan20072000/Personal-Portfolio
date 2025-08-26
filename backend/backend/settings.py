@@ -143,3 +143,8 @@ if os.environ.get('RENDER'):
         )
     }
 
+    CSRF_TRUSTED_ORIGINS = [
+   "https://personal-portfolio-a9hn.onrender.com"
+]
+
+
