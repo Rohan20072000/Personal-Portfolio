@@ -3,11 +3,11 @@ import axios from 'axios'
 
 const Projects = () => {
   const [projectList, setProjectList] = useState([])
-
-  useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/projects/')
-      .then(response => setProjectList(response.data))
-      .catch(error => console.error('Error fetching projects:', error));
+useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/projects/`)
+      .then((response) => setProjectList(response.data))
+      .catch((error) => console.error("Error fetching projects:", error));
   }, []);
 
   return (
