@@ -147,4 +147,9 @@ if os.environ.get('RENDER'):
    "https://personal-portfolio-a9hn.onrender.com"
 ]
 
+# settings.py
+CORS_ALLOWED_ORIGINS = [
+    "https://wonderful-gumdrop-f35a5f.netlify.app",
+]
+
 
