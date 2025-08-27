@@ -71,7 +71,7 @@ const Home = () => {
         {/* Buttons */}
         <div className='d-flex justify-content-center gap-3'>
           <Link to="/projects" className="btn btn-info fw-semibold px-4 me-3 shadow-sm">View Projects</Link>
-          <a href="/resume.pdf" className="btn btn-outline-light fw-semibold px-4 shadow-sm" target="_blank" rel="noopener noreferrer">
+          <a href="/Rohan_Resume_.pdf" className="btn btn-outline-light fw-semibold px-4 shadow-sm" target="_blank" rel="noopener noreferrer">
             Download Resume
           </a>
         </div>

@@ -6,7 +6,7 @@ const Resume = () => {
       <div className="text-center mb-5">
         <h2 className="fw-bold text-primary">My Resume</h2>
         <p className="text-muted">A quick overview of my education & skills</p>
-        <a href="/resume.pdf" download className="btn btn-success btn-lg shadow-sm">
+        <a href="/Rohan_Resume_.pdf" download className="btn btn-success btn-lg shadow-sm">
           📄 Download Resume
         </a>
       </div>
